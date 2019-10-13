@@ -1,0 +1,73 @@
+﻿@model auth.Models.Reservation
+
+@{
+    ViewBag.Title = "Detale";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="details">
+    <h2>Detale wizyty</h2>
+
+        <div class="details-cont">
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Data wizyty
+            </dt>
+
+            <dd>
+                @Model.Appointment.Date.ToString("f")
+            </dd>
+
+            <dt>
+                Data rezerwacji
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AdditionDate)
+            </dd>
+
+            <dt>
+               Specjalista
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Appointment.Doctor.FullName)
+            </dd>
+
+
+            <dt>
+                Specjalizacja
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Appointment.Doctor.Specialisation)
+            </dd>
+
+            <dt>
+                Email kontaktowy
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Appointment.Doctor.Email)
+            </dd>
+
+            <dt>
+                Stan rezerwacji
+            </dt>
+
+            <dd>
+                @if (Model.Appointment.Date < DateTime.Now && Model.ReservationState == auth.Models.ReservationState.Confirmed)
+                {
+                    <p> Zakończone </p>
+                }
+                else
+                {
+
+                    @Html.DisplayFor(model => model.ReservationState)
+                }
+            </dd>
+
+        </dl>
+            
+    </div>
+</div> 

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<auth.Models.Doctor>
+
+@{
+    ViewBag.Title = "Nasi specjaliści";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="doctor">
+    <h2>Wybierz specjalistę</h2>
+    <div class="table-container-doctor">
+        <table class="table table-bordered table-striped table-responsive table-hover">
+
+            <tr>
+
+                <th>
+                    Imię i Nazwisko Specjalisty
+                </th>
+
+                <th>
+                    E-mail kontaktowy
+                </th>
+                <th>
+                    Specjalizacja
+                </th>
+                @if (User.IsInRole("Admin"))
+                {
+                    <th>
+                        Wykonaj akcję
+                    </th>
+                }
+
+            </tr>
+
+
+            @foreach (var item in Model)
+            {
+
+                <tr onclick="location.href = '@(Url.Action("Index", "Appointment", new { id = item.DoctorId }))'">
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FullName)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Specialisation)
+                    </td>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <td>
+                            <a href="@Url.Action("Details", "Doctor", new { id = item.DoctorId })" class="btn btn-info btn-sm">
+                                Detale
+                            </a>
+                            <a href="@Url.Action("Edit", "Doctor", new { id = item.DoctorId })" class="btn btn-info btn-sm">
+                                Edytuj
+                            </a>
+                            <a href="@Url.Action("Delete", "Doctor", new { id = item.DoctorId })" class="btn btn-info btn-sm">
+                                Usuń
+                            </a>
+                        </td>
+                    }
+                </tr>
+
+
+            }
+        </table>
+    </div>
+</div>

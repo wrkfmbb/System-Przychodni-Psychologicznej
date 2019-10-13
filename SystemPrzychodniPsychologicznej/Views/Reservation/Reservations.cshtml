@@ -1,0 +1,150 @@
+﻿@model IEnumerable<auth.Models.Reservation>
+
+@{
+    ViewBag.Title = " Twoje Reserwacje";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="doctor">
+    <h2>Twoje rezerwacje</h2>
+   
+    <div class="table-container-doctor">
+        <h3> Nadchodzące wizyty  </h3>
+        <table class="table table-bordered table-striped table-responsive table-hover">
+            <tr>
+                <th>
+                    Data spotkania
+                </th>
+
+                <th>
+                    Imię i nazwisko specjalisty
+                </th>
+
+                <th>
+                    Stan rezerwacji
+                </th>
+                <th>Podejmij akcję</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr onclick="location.href = '@(Url.Action("Details", "Reservation", new { id = item.ReservationId }))'">
+                    @if (item.ReservationState == auth.Models.ReservationState.Pending || item.ReservationState == auth.Models.ReservationState.Confirmed && item.Appointment.Date > DateTime.Now)
+                    {
+                        <td>
+                            @item.Appointment.Date.ToString("f")
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Appointment.Doctor.FullName)
+                        </td>
+
+                        <td>
+                            @if (item.ReservationState == auth.Models.ReservationState.Pending)
+                            {
+                                <p> Oczekujące </p>
+                            }
+                            else
+                            {
+                                <p> Potwierdzone </p>
+                            }
+                        </td>
+                        <td>
+                            <p>
+                                <a href="@Url.Action("Details", "Reservation", new { id = item.ReservationId })" class="btn btn-primary btn-md">
+                                    Detale
+                                </a>
+                                <a href="@Url.Action("Cancel", "Reservation", new { id = item.ReservationId})" class="btn btn-primary btn-md">
+                                    Odwołaj
+                                </a>
+                            </p>
+
+                        </td>
+                    }
+                </tr>
+            }
+
+        </table>
+        <hr />
+        <h3> Zakończone wizyty </h3>
+        <table class="table table-bordered table-striped table-responsive table-hover">
+            <tr>
+                <th>
+                    Data spotkania
+                </th>
+
+                <th>
+                    Imię i nazwisko specjalisty
+                </th>
+
+                <th>
+                    Stan rezerwacji
+                </th>
+                
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr onclick="location.href = '@(Url.Action("Details", "Reservation", new { id = item.ReservationId }))'">
+                    @if (item.ReservationState == auth.Models.ReservationState.Confirmed && item.Appointment.Date < DateTime.Now)
+                    {
+                        <td>
+                            @item.Appointment.Date.ToString("f")
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Appointment.Doctor.FullName)
+                        </td>
+
+
+                        <td>
+                            Zakończona
+                        </td>
+                       
+                    }
+                </tr>
+            }
+
+
+        </table> <hr />
+
+        <h3> Odwołane wizyty </h3>
+        <table class="table table-bordered table-striped table-responsive table-hover ">
+            <tr>
+                <th>
+                    Data spotkania
+                </th>
+
+                <th>
+                    Imię i nazwisko specjalisty
+                </th>
+
+                <th>
+                    Stan rezerwacji
+                </th>
+              
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr onclick="location.href = '@(Url.Action("Details", "Reservation", new { id = item.ReservationId }))'">
+                    @if (item.ReservationState == auth.Models.ReservationState.Cancelled)
+                    {
+                        <td>
+                            @item.Appointment.Date.ToString("f")
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Appointment.Doctor.FullName)
+                        </td>
+
+                        <td>
+                            Odwołane
+                        </td>
+                       
+                    }
+                </tr>
+            }
+        </table>
+        <hr />
+    </div>
+</div> 

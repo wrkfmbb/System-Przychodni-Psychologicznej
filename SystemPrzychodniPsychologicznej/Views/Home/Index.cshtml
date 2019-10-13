@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "MindClinic";
+}
+
+@*<div class="jumbotron">
+        <h1>MindClinic</h1>
+        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+        <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        @if (User.IsInRole("Admin")) { <p><a class="btn btn-danger btn-md"> Click me, I'm admin</a></p>}
+    </div>
+
+    <div class="row">
+        <div class="card col-md-4">
+            <h2>Getting started</h2>
+            <p>
+                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+                enables a clean separation of concerns and gives you full control over markup
+                for enjoyable, agile development.
+            </p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        </div>
+        <div class="card col-md-4">
+            <h2>Get more libraries</h2>
+            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        </div>
+        <div class="card col-md-4">
+            <h2>Web Hosting</h2>
+            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        </div>
+    </div>*@
+
+
+<div id="home">
+    <div class="landing-text">
+        <h1>KLINIKA PSYCHOLOGICZNA</h1>
+        <h3>Otwórz się na wszystkie możliwości swojego umysłu</h3>
+        <a href="@Url.Action("Index","Department")"
+           class="btn btn-default btn-lg">Zarezerwuj wizytę</a>
+    </div>
+</div>
+<div class="padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6  col-xs-12">
+                <div class="picture">
+                    <img src="~/Images/watercolor-1020509_640.jpg" class="img-responsive" />
+                </div>
+            </div>
+            <div class="col-md-6 col-xs-12 text-center">
+                <h2>Magia umysłu człowieka</h2>
+                <p class="lead">
+                    Udowodniono, że ludzie nawiązują większe
+                    porozumienie z osobami, które dotykają ich
+                    przedramienia i/lub podczas rozmowy
+                    mówią w kierunku ich prawego ucha.
+                </p>
+                <p class="lead">
+                    Ludzie cierpiący na depresję śnią trzy razy
+                    tyle co ludzie, którzy nie odczuwają smutku.
+                </p>
+                <p class="lead">
+                    Mózgi dzieci, które były narażone na przemoc w rodzinie,
+                    mają takie same wzorce działania, jak żołnierze walczący na wojnie.
+                    Prawda jest taka, że ​​każda myśl jest fizyczną ścieżką,
+                    która tworzy się w mózgu.
+                    Dlatego dobrze jest mieć podnoszące na duchu, zachęcające myśli.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
