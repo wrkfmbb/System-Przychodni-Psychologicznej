@@ -7,10 +7,15 @@
 <div class="appointment">
 
     <h2> Udało się! </h2>
+    <img src="~/Images/happy.png" width="228" height="315" />
     <h3>
         @TempData["reserved"]
     </h3>
-    <img src="~/Images/happy.png" width="400" height="300" />
+   <a href="@Url.Action("Index", "Home")" class="btn btn-info btn-lg">
+        Rozumiem
+    </a>
+    <br /> 
+    <hr /> 
 
 </div>
 
