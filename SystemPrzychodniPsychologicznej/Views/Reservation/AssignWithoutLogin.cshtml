@@ -44,8 +44,11 @@
                         @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                     </div>
                 </div>
+                <div class="col-md-2"> </div>
+                <div class="col-md-10">
+                    <div class="g-recaptcha" data-sitekey="6Lf7uL0UAAAAAKZkZU2FVWQIyUVTYo7xXjXYChJ6"></div>
+                </div>
 
-                <div class="g-recaptcha" data-sitekey="6Lf7uL0UAAAAAKZkZU2FVWQIyUVTYo7xXjXYChJ6"></div>
                 <br />
                 @ViewBag.Captcha
                 <div class="form-submit">

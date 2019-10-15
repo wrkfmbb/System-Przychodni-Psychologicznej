@@ -349,3 +349,4 @@ healthchecksdb
 MigrationBackup/
 *.ldf
 *.mdf
+SystemPrzychodniPsychologicznej/App_Data/aspnet-SystemPrzychodniPsychologicznej-20191012070530.mdf

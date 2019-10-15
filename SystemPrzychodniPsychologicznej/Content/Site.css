@@ -416,11 +416,13 @@ textarea {
         color: #00004d;
         border-color: #00004d; 
     }
-
-
-.login-form a{
-    color: #ffccf2;
+.captcha-box {
+    padding: 0 0.1em 0 0.1em; 
     
+}
+
+.login-form a {
+    color: #ffccf2;
 }
 .login-form p{
     margin-top: 6em; 
