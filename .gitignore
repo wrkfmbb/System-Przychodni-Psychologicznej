@@ -352,3 +352,4 @@ MigrationBackup/
 SystemPrzychodniPsychologicznej/App_Data/aspnet-SystemPrzychodniPsychologicznej-20191012070530.mdf
 SystemPrzychodniPsychologicznej/App_Data/aspnet-SystemPrzychodniPsychologicznej-20191012070530.mdf
 *.ldf
+.vs/SystemPrzychodniPsychologicznej/v15/.suo
