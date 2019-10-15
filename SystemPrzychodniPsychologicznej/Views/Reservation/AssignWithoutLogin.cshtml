@@ -4,6 +4,7 @@
     ViewBag.Title = "AssignWithoutLogin";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <div class="login-box">
 
 
@@ -44,13 +45,16 @@
                     </div>
                 </div>
 
+                <div class="g-recaptcha" data-sitekey="6Lf7uL0UAAAAAKZkZU2FVWQIyUVTYo7xXjXYChJ6"></div>
+                <br />
+                @ViewBag.Captcha
                 <div class="form-submit">
                     <div class=" col-md-12">
                         <input type="submit" value="Rezerwuj bez logowania" class="btn btn-info btn-lg" />
                     </div>
                 </div>
                 <p>
-                   
+
                     <a href="@Url.Action("Quit", "Reservation", new { id = Model.ReservationId })" class="btn btn-info btn-lg">
                         Anuluj
                     </a>
@@ -60,3 +64,4 @@
 
     </div>
 </div>
+

@@ -89,6 +89,13 @@ body {
         font-weight: 200;
         letter-spacing: 0.1em;
     }
+    .landing-text h2 {
+        font-size: 300%; 
+        font-weight: 400;
+        letter-spacing: 0.1em;
+        margin-bottom: 60px; 
+       
+    }
 
     .landing-text h3 {
         letter-spacing: 0.06em;

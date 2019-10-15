@@ -9,6 +9,8 @@ using auth.Models;
 using System.Configuration;
 using System.Net.Mail;
 using Microsoft.AspNet.Identity;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace SystemPrzychodniPsychologicznej.Controllers
 {
@@ -249,6 +251,7 @@ namespace SystemPrzychodniPsychologicznej.Controllers
             Appointment appointment = db.Appointments.Find(id);
             int doctorId = appointment.DoctorId;
 
+         
             //jeśli nie ma spotkania to wtedy nie tworzy rezerwacji 
             if (isAppointment)
             {
@@ -286,15 +289,20 @@ namespace SystemPrzychodniPsychologicznej.Controllers
                 return RedirectToAction("Index", "Appointment", new { id = doctorId });
 
             }
-
-
-
         }
 
         [HttpPost, ActionName("AssignWithoutLogin")]
         [ValidateAntiForgeryToken]
         public ActionResult AssignWithoutLoginPost(int? id)
         {
+            //to reCaptcha 
+            var response = Request["g-recaptcha-response"];
+            string secretKey = "6Lf7uL0UAAAAABmz78SwbUvMWjCzupmC9ar0aQvW";
+            var client = new WebClient();
+            var result = client.DownloadString(string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", secretKey, response));
+            var obj = JObject.Parse(result);
+            var status = (bool)obj.SelectToken("success");
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -306,18 +314,22 @@ namespace SystemPrzychodniPsychologicznej.Controllers
                                                                r.Appointment.IsUnavailable == true).Single();
 
             int doctorId = reservationToUpdate.Appointment.DoctorId;
-
-            if (TryUpdateModel(reservationToUpdate, "", new string[] { "Name", "Surname", "Email" }))
+            if (status)
             {
+                if (TryUpdateModel(reservationToUpdate, "", new string[] { "Name", "Surname", "Email" }))
+                {
 
-                db.SaveChanges();
-                CreateAndSendEmail(reservationToUpdate.ReservationId, ReservationState.Pending);
-
-                if (User.IsInRole("Admin")) return RedirectToAction("Visits", "Reservation");
-                else return RedirectToAction("Index", "Home"); // tu powinna być strona informująca o pomyślnej rezerwacji
+                    db.SaveChanges();
+                    CreateAndSendEmail(reservationToUpdate.ReservationId, ReservationState.Pending);
+                    TempData["reserved"] = "Wizyta została zarezerwowana";
+                    
+                    if (User.IsInRole("Admin")) return RedirectToAction("Visits", "Reservation");
+                                       
+                    else return RedirectToAction("Index", "Home"); // tu powinna być strona informująca o pomyślnej rezerwacji
+                }
             }
-
-
+            ViewBag.Captcha = "Nie zaznaczono pola ReCaptchy"; 
+            
             return View(reservationToUpdate);
 
 
@@ -328,10 +340,11 @@ namespace SystemPrzychodniPsychologicznej.Controllers
             Reservation reservationToDel = db.Reservations.Find(id);
             reservationToDel.Appointment.IsReservating = false;
             reservationToDel.Appointment.IsUnavailable = false;
-         
+            int doctorId = reservationToDel.Appointment.DoctorId; 
+
             db.Reservations.Remove(reservationToDel);
             db.SaveChanges(); 
-            return RedirectToAction("Index", "Appointment", new { id = reservationToDel.AppointmentId });
+            return RedirectToAction("Index", "Appointment", new { id = doctorId });
         }
 
         // GET: Reservation/Details/5
