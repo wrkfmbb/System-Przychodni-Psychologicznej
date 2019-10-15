@@ -21,11 +21,11 @@
         </a>
     }
 
-    @if (!Model.Any())
+    @if (!Model.Any() && !User.IsInRole("Admin"))
     {
         <p>
             <h3> Niestety, nie ma żadnych dostępnych wizyt w tej chwili... </h3>
-          
+            <img src="~/Images/sad.png" width="400" height="300"/>
         </p>
     }
     else

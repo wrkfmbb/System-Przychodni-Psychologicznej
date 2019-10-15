@@ -313,6 +313,9 @@ textarea {
     min-height: 80%;
     text-align: center;
 }
+.appointment img{
+    margin: 20% 0 20% 0; 
+}
 
     .appointment h2 {
         font-size: 300%;
@@ -324,6 +327,7 @@ textarea {
         /*padding: 0 20% 0 20%;*/
         margin: 0 20% 0 20%; 
     }
+
 
     .appointment table tr th {
         text-align: center;

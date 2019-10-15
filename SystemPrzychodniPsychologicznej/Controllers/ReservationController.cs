@@ -325,7 +325,7 @@ namespace SystemPrzychodniPsychologicznej.Controllers
                     
                     if (User.IsInRole("Admin")) return RedirectToAction("Visits", "Reservation");
                                        
-                    else return RedirectToAction("Index", "Home"); // tu powinna być strona informująca o pomyślnej rezerwacji
+                    else return View("Communicate"); // tu powinna być strona informująca o pomyślnej rezerwacji
                 }
             }
             ViewBag.Captcha = "Nie zaznaczono pola ReCaptchy"; 
