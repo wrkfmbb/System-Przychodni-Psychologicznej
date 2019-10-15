@@ -89,12 +89,12 @@ body {
         font-weight: 200;
         letter-spacing: 0.1em;
     }
+
     .landing-text h2 {
-        font-size: 300%; 
+        font-size: 300%;
         font-weight: 400;
         letter-spacing: 0.1em;
-        margin-bottom: 60px; 
-       
+        margin-bottom: 60px;
     }
 
     .landing-text h3 {
@@ -155,6 +155,16 @@ footer {
         text-decoration: none;
     }
 
+
+span .far {
+    font-size: 200px;
+    color: #808080;
+}
+
+    .far:hover {
+        text-decoration: none;
+    }
+
 .icon {
     max-width: 200px;
 }
@@ -211,7 +221,7 @@ textarea {
     }
 
     .department .table-container {
-        padding: 0 20% 1% 20%;
+        padding: 0 20% 0 20%;
     }
 
     .department table tr th {
@@ -278,6 +288,10 @@ textarea {
     color: #ffccf2;
     border-color: #ffccf2;
     border-radius: 20px;
+    
+}
+.btn-lg {
+    margin: 10px 0 10px 0;
 }
 
     .btn-info:hover {
@@ -307,7 +321,8 @@ textarea {
     }
 
     .appointment .table-container-appointment {
-        padding: 1% 20% 0 20%;
+        /*padding: 0 20% 0 20%;*/
+        margin: 0 20% 0 20%; 
     }
 
     .appointment table tr th {
@@ -381,7 +396,7 @@ textarea {
     height: 100%;
     width: 100%;
     background-size: cover;
-    min-height: 80%; 
+    min-height: 80%;
 }
 
 .login-form {
@@ -394,73 +409,77 @@ textarea {
     text-align: center;
     color: #00004d;
 }
+
     .login-form h2 {
         font-size: 4em;
-      letter-spacing: 0.1em; 
+        letter-spacing: 0.1em;
     }
+
 .form-group {
     width: 100%;
     overflow: hidden;
-    text-align: center; 
+    text-align: center;
 }
 
-.form-group input{
-    background: none;
-    color: #00004d; 
-    border-color: #00004d; 
-    width: 20em;
-
-}
-    .form-group input:hover {
-        background: #ffccf2;
+    .form-group input {
+        background: none;
         color: #00004d;
-        border-color: #00004d; 
+        border-color: #00004d;
+        width: 20em;
     }
+
+        .form-group input:hover {
+            background: #ffccf2;
+            color: #00004d;
+            border-color: #00004d;
+        }
+
 .captcha-box {
-    padding: 0 0.1em 0 0.1em; 
-    
+    padding: 0 0.1em 0 0.1em;
+    margin: 0.1em 0 0.1em 0; 
 }
 
 .login-form a {
     color: #ffccf2;
 }
-.login-form p{
-    margin-top: 6em; 
+
+.login-form p {
+    margin-top: 6em;
 }
 
-.login-form hr{
+.login-form hr {
     color: #ffccf2;
-    margin-bottom: 4em; 
+    margin-bottom: 4em;
 }
 
 .details {
-   
-    min-height: 80%; 
-    padding-top: 9%; 
-    width: 25%; 
-  margin: 0 auto; 
-  text-align:center; 
-  font-size: 1.2em;
-    
+    min-height: 80%;
+    padding-top: 9%;
+    width: 25%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.2em;
 }
 
-.details-cont{
-    text-align: left; 
+.details-cont {
+    text-align: left;
 }
 
-.about{
-    min-height: 80%; 
-    text-align: center; 
-   margin: 0 auto; 
-    font-size: 1.2em; 
-    padding-top: 9%; 
+.about {
+    min-height: 80%;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 1.2em;
+    padding-top: 9%;
 }
-.about h3{
-    font-size: 2em; 
-    padding: 1% 0 3% 0; 
-    letter-spacing: 0.1em; 
-}
-.about p{
-    padding-bottom:2% ; 
-    letter-spacing: 0.08em; 
-}
+
+    .about h3 {
+        font-size: 2em;
+        padding: 1% 0 3% 0;
+        letter-spacing: 0.1em;
+    }
+
+    .about p {
+        padding-bottom: 2%;
+        letter-spacing: 0.08em;
+    }

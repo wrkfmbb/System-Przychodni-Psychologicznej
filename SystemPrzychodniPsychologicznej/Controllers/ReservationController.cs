@@ -278,7 +278,7 @@ namespace SystemPrzychodniPsychologicznej.Controllers
             else if(!isAppointment)
             {
 
-                ViewBag.Reserved = "Niestety, tę wizyte ktoś właśnie zarezerwował...";
+                TempData["reservating"] = "Niestety, tę wizyte ktoś właśnie zarezerwował...";
 
                 return RedirectToAction("Index", "Appointment", new { id = doctorId });
             }
