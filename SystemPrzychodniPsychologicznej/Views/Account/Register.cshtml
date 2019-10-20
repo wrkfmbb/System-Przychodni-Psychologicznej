@@ -2,7 +2,7 @@
 @model RegisterViewModel
 
 @{
-    ViewBag.Title = "Zarejestruj się";
+    ViewBag.Title = "Rejestracja";
 }
 <div class="login-box">
 
@@ -13,7 +13,7 @@
         {
             @Html.AntiForgeryToken()
 
-            <hr />
+        <hr /> 
             @Html.ValidationSummary("", new { @class = "text-danger" })
             <div class="form-group">
                 @Html.LabelFor(m => m.Name, new { @class = "col-md-4 control-label" })

@@ -587,15 +587,29 @@ textarea {
             letter-spacing: 0em;
         }
 
-    .form-group input{
-        width: 24em; 
+    .form-group input {
+        width: 24em;
+        height: 1.8em;
+        border-color: #00004d;
+      
     }
+    
+    .form-group label {
+        color: #ffccf2;
+        font-size: 16px;
+        font-weight: 100; 
+        letter-spacing: 0.2em; 
+    }
+
     .login-form h2{
         font-size: 2em;
     }
     .login-form{
         width: 85%; 
        
+    }
+    .login-box hr {
+        border-top: 1px solid #00004d; 
     }
 
 }
