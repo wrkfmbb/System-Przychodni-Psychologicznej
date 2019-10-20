@@ -416,7 +416,7 @@ textarea {
         background: none;
         color: #00004d;
         border-color: #00004d;
-        width: 20em;
+        width: 18em;
     }
 
         .form-group input:hover {
@@ -481,7 +481,7 @@ textarea {
 /* Dla telefonów */
 @media (max-width: 720px) {
     .landing-text h1 {
-        font-size: 180%;
+        font-size: 200%;
     }
 
     .landing-text h3 {
@@ -586,4 +586,16 @@ textarea {
             font-size: 12px;
             letter-spacing: 0em;
         }
+
+    .form-group input{
+        width: 24em; 
+    }
+    .login-form h2{
+        font-size: 2em;
+    }
+    .login-form{
+        width: 85%; 
+       
+    }
+
 }

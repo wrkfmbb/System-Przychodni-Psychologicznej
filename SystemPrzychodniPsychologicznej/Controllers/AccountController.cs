@@ -155,10 +155,10 @@ namespace SystemPrzychodniPsychologicznej.Controllers
                 {
                     UserName = model.Email,
                     Email = model.Email,
-                    BirthDate = model.BirthDate,
+                    //BirthDate = model.BirthDate,
                     Name = model.Name,
                     Surname = model.Surname,
-                    PhoneNumber = model.PhoneNumber
+                    //PhoneNumber = model.PhoneNumber
                 };
 
                 var result = await UserManager.CreateAsync(user, model.Password);
