@@ -161,32 +161,14 @@ span .far {
     color: #808080;
 }
 
-    .far:hover {
-        text-decoration: none;
-    }
+.far:hover {
+    text-decoration: none;
+}
 
 .icon {
     max-width: 200px;
 }
 
-/* Dla telefonów */
-@media (max-width: 768px) {
-    .landing-text h1 {
-        font-size: 180%;
-    }
-
-    .landing-text h3 {
-        font-size: 100%;
-    }
-
-    .landing-text a {
-        margin-top: 2%;
-    }
-
-    footer {
-        height: 40%;
-    }
-}
 
 
 /* Set padding to keep content from hitting the edges */
@@ -288,24 +270,24 @@ textarea {
     color: #ffccf2;
     border-color: #ffccf2;
     border-radius: 20px;
-    
 }
+
 .btn-lg {
     margin: 10px 0 10px 0;
 }
 
-    .btn-info:hover {
-        background-color: #ffccf2;
-        color: #00004d;
-        border-color: #00004d;
-    }
+.btn-info:hover {
+    background-color: #ffccf2;
+    color: #00004d;
+    border-color: #00004d;
+}
 
-    .btn-info .active {
-        background-color: #00004d;
-        color: #ffccf2;
-        border-color: #ffccf2;
-        border-radius: 20px;
-    }
+.btn-info .active {
+    background-color: #00004d;
+    color: #ffccf2;
+    border-color: #ffccf2;
+    border-radius: 20px;
+}
 
 
 .appointment {
@@ -313,9 +295,9 @@ textarea {
     min-height: 80%;
     text-align: center;
 }
-.appointment img{
+    /*.appointment img{
     margin: 20% 0 20% 0; 
-}
+}*/
 
     .appointment h2 {
         font-size: 300%;
@@ -325,7 +307,7 @@ textarea {
 
     .appointment .table-container-appointment {
         /*padding: 0 20% 0 20%;*/
-        margin: 0 20% 0 20%; 
+        margin: 0 20% 0 20%;
     }
 
 
@@ -357,10 +339,12 @@ textarea {
         letter-spacing: 0.1em;
         padding: 3% 0 5% 0;
     }
-    .managment h1{
-        color: #ffccf2; 
-        font-size: 200%; 
+
+    .managment h1 {
+        color: #ffccf2;
+        font-size: 200%;
     }
+
     .managment h5 {
         font-size: 150%;
         color: #f2f2f2;
@@ -443,7 +427,7 @@ textarea {
 
 .captcha-box {
     padding: 0 0.1em 0 0.1em;
-    margin: 0.1em 0 0.1em 0; 
+    margin: 0.1em 0 0.1em 0;
 }
 
 .login-form a {
@@ -490,3 +474,116 @@ textarea {
         padding-bottom: 2%;
         letter-spacing: 0.08em;
     }
+
+
+
+
+/* Dla telefonów */
+@media (max-width: 720px) {
+    .landing-text h1 {
+        font-size: 180%;
+    }
+
+    .landing-text h3 {
+        font-size: 100%;
+    }
+
+    .landing-text a {
+        margin-top: 2%;
+    }
+
+    footer {
+        height: 30%;
+        padding-bottom: 2%;
+    }
+
+        footer h3 {
+            font-size: 14px;
+            letter-spacing: 0em;
+            font-weight: 200;
+            padding: 0 0 0 1%;
+        }
+
+        footer h5 {
+            font-size: 12px;
+        }
+
+
+    .doctor {
+        padding-top: 35%;
+        min-height: 70%;
+    }
+
+        .doctor h2 {
+            font-size: 150%;
+            padding: 2% 0 5% 0;
+        }
+
+        .doctor .table-container-doctor {
+            padding: 0px;
+        }
+
+        .doctor table tr th {
+            font-size: 12px;
+            letter-spacing: 0em;
+        }
+
+        .doctor table tr td {
+            letter-spacing: 0em;
+            font-size: 12px;
+        }
+
+    .appointment {
+        padding-top: 35%;
+        min-height: 70%;
+    }
+
+        .appointment h2 {
+            font-size: 150%;
+            padding: 2% 0 5% 0;
+        }
+
+        .appointment h3 {
+            font-size: 150%;
+        }
+
+        .appointment .table-container-appointment {
+            margin: 0;
+            padding: 0;
+        }
+
+        .appointment table tr th {
+            font-size: 12px;
+            letter-spacing: 0em;
+        }
+
+        .appointment table tr td {
+            letter-spacing: 0em;
+            font-size: 12px;
+        }
+
+    .department {
+        padding-top: 20%;
+        min-height: 70%;
+    }
+
+        .department h2 {
+            font-size: 150%;
+            padding: 2% 0 5% 0;
+        }
+
+        .department .table-container {
+            margin: 0;
+            padding: 0;
+        }
+
+        .department table tr th {
+            font-size: 12px;
+            letter-spacing: 0em;
+        }
+
+        .department table tr td {
+            font-size: 12px;
+            letter-spacing: 0em;
+        }
+}
