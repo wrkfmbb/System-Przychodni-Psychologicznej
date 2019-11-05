@@ -5,6 +5,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script type="text/javascript"> 
+    function preback() {
+        window.history.forward(); 
+    }
+    setTimeout("preback()", 0);
+    window.onunload = function () { null }; 
+</script>
+
 <div class="login-box">
 
 

@@ -11,9 +11,11 @@ using System.Net.Mail;
 using Microsoft.AspNet.Identity;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Web;
 
 namespace SystemPrzychodniPsychologicznej.Controllers
 {
+    
     public class ReservationController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -243,15 +245,16 @@ namespace SystemPrzychodniPsychologicznej.Controllers
 
             return RedirectToAction("Index", "Appointment", new { id = doctorId });
         }
-
-        ////GET : Reservation/AssignWithoutLogin/
+        
+        //GET : Reservation/AssignWithoutLogin/
+        
         public ActionResult AssignWithoutLogin(int? id)
         {
             var isAppointment = db.Appointments.Where(a => a.AppointmentId == id && a.IsReservating == false).Any();
             Appointment appointment = db.Appointments.Find(id);
             int doctorId = appointment.DoctorId;
-
-         
+            
+        
             //jeśli nie ma spotkania to wtedy nie tworzy rezerwacji 
             if (isAppointment)
             {
@@ -325,16 +328,15 @@ namespace SystemPrzychodniPsychologicznej.Controllers
                     
                     if (User.IsInRole("Admin")) return RedirectToAction("Visits", "Reservation");
                                        
-                    else return View("Communicate"); // tu powinna być strona informująca o pomyślnej rezerwacji
+                    else return View("Communicate"); // tu powinna być strona informująca o pomyślnej rezerwacji - 22.10 i juz jest
                 }
             }
             ViewBag.Captcha = "Nie zaznaczono pola ReCaptchy"; 
             
             return View(reservationToUpdate);
-
-
-
+                       
         }
+
         public ActionResult Quit(int? id)
         {
             Reservation reservationToDel = db.Reservations.Find(id);

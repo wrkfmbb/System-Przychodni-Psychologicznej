@@ -11,6 +11,7 @@ using auth.Models;
 
 namespace SystemPrzychodniPsychologicznej.Controllers
 {
+    
     public class AppointmentController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -69,6 +70,7 @@ namespace SystemPrzychodniPsychologicznej.Controllers
                 db.Appointments.Add(appointment);
                 db.SaveChanges();
                 ViewBag.Error = string.Empty;
+                TempData["AdditionAppointment"] = "Wizyta została dodana";
                 return RedirectToAction("Visits", "Reservation");
             }
 
