@@ -12,6 +12,7 @@ using Microsoft.AspNet.Identity;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Web;
+using SystemPrzychodniPsychologicznej.Infrastructure;
 
 namespace SystemPrzychodniPsychologicznej.Controllers
 {

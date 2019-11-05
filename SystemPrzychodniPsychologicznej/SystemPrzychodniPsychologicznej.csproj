@@ -184,19 +184,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201910121712355_InitialCreate.cs" />
-    <Compile Include="Migrations\201910121712355_InitialCreate.Designer.cs">
+    <Compile Include="Infrastructure\ApplicationDbContext.cs" />
+    <Compile Include="Infrastructure\Migrations\201910121712355_InitialCreate.cs" />
+    <Compile Include="Infrastructure\Migrations\201910121712355_InitialCreate.Designer.cs">
       <DependentUpon>201910121712355_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201910121737308_ClinicEntities.cs" />
-    <Compile Include="Migrations\201910121737308_ClinicEntities.Designer.cs">
+    <Compile Include="Infrastructure\Migrations\201910121737308_ClinicEntities.cs" />
+    <Compile Include="Infrastructure\Migrations\201910121737308_ClinicEntities.Designer.cs">
       <DependentUpon>201910121737308_ClinicEntities.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201910121849156_RegisterViewModel.cs" />
-    <Compile Include="Migrations\201910121849156_RegisterViewModel.Designer.cs">
+    <Compile Include="Infrastructure\Migrations\201910121849156_RegisterViewModel.cs" />
+    <Compile Include="Infrastructure\Migrations\201910121849156_RegisterViewModel.Designer.cs">
       <DependentUpon>201910121849156_RegisterViewModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Infrastructure\Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\Department.cs" />
@@ -316,13 +317,13 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201910121712355_InitialCreate.resx">
+    <EmbeddedResource Include="Infrastructure\Migrations\201910121712355_InitialCreate.resx">
       <DependentUpon>201910121712355_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910121737308_ClinicEntities.resx">
+    <EmbeddedResource Include="Infrastructure\Migrations\201910121737308_ClinicEntities.resx">
       <DependentUpon>201910121737308_ClinicEntities.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910121849156_RegisterViewModel.resx">
+    <EmbeddedResource Include="Infrastructure\Migrations\201910121849156_RegisterViewModel.resx">
       <DependentUpon>201910121849156_RegisterViewModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

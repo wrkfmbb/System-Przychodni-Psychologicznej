@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using SystemPrzychodniPsychologicznej.Models;
 using auth.Models;
+using SystemPrzychodniPsychologicznej.Infrastructure;
 
 namespace SystemPrzychodniPsychologicznej.Controllers
 {
