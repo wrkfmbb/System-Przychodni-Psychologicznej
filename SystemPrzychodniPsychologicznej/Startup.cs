@@ -17,7 +17,6 @@ namespace SystemPrzychodniPsychologicznej
 
             app.UseHangfireDashboard("/hf");
 
-            //wysyłanie maila jako bg job do przypominania o wizycie
             EmailController obj = new EmailController();
             RecurringJob.AddOrUpdate(() => obj.SendEmail(), Cron.Daily(11));
 
